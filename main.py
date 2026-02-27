@@ -5,7 +5,7 @@ import secrets
 from datetime import datetime
 
 
-# ---------- USER CLASS ----------
+# user class
 class User:
     def __init__(self, username, salt, password_hash, created_at=None, last_login=None):
         self.username = username
@@ -34,7 +34,7 @@ class User:
         )
 
 
-# ---------- STORAGE CLASS ----------
+# storage class
 class Storage:
     FILE_NAME = "users.json"
 
@@ -52,7 +52,7 @@ class Storage:
             json.dump({u: user.to_dict() for u, user in users.items()}, f, indent=4)
 
 
-# ---------- AUTH SERVICE ----------
+# auth service
 class AuthService:
     def __init__(self):
         self.users = Storage.load_users()
@@ -62,7 +62,7 @@ class AuthService:
 
     def register(self, username, password):
         if username in self.users:
-            print("❌ Lietotājs jau eksistē.")
+            print("Lietotājs jau eksistē.")
             return
 
         salt = secrets.token_hex(16)
@@ -70,13 +70,13 @@ class AuthService:
         user = User(username, salt, password_hash)
         self.users[username] = user
         Storage.save_users(self.users)
-        print("✅ Reģistrācija veiksmīga.")
+        print("Reģistrācija veiksmīga.")
 
     def login(self, username, password):
         user = self.users.get(username)
         if not user:
             self._log(username, "FAIL")
-            print("❌ Nepareizi dati.")
+            print("Nepareizi dati.")
             return None
 
         password_hash = self._hash_password(password, user.salt)
@@ -84,11 +84,11 @@ class AuthService:
             user.last_login = datetime.now().isoformat()
             Storage.save_users(self.users)
             self._log(username, "SUCCESS")
-            print("✅ Pieslēgšanās veiksmīga.")
+            print("Pieslēgšanās veiksmīga.")
             return user
         else:
             self._log(username, "FAIL")
-            print("❌ Nepareizi dati.")
+            print("Nepareizi dati.")
             return None
 
     def _log(self, username, status):
@@ -97,7 +97,7 @@ class AuthService:
             f.write(f"{time} | {username} | {status}\n")
 
 
-# ---------- MAIN MENU ----------
+# main
 def main():
     auth = AuthService()
     logged_user = None
@@ -121,7 +121,7 @@ def main():
                 logged_user = auth.login(u, p)
 
             elif choice == "3":
-                print("👋 Uz redzēšanos!")
+                print("Uz redzēšanos!")
                 break
 
         else:
