@@ -15,4 +15,4 @@ Vienādas paroles rada vienādus hešus, kas ļauj izmantot iepriekš sagatavota
 
 6) Nosauc 2 drošības labās prakses:
 Izmantot bcrypt vai argon2 paroļu hešošanai
-Ieviest rate limiting vai 2FA
+Ieviest 2FA
