@@ -1,1 +1,14 @@
+1) Kas ir “salt” un kāpēc tas ir vajadzīgs paroļu glabāšanā?
+Salt ir nejauša vērtība, ko pievieno parolei pirms hešošanas. Tas nodrošina, ka vienādas paroles rada dažādus hash rezultātus un palīdz aizsargāt pret rainbow table uzbrukumiem.
 
+2) Kāpēc nedrīkst glabāt paroles plaintext formā pat lokālā JSON failā?
+Ja paroles tiek glabātas plaintext formā, tās var viegli nolasīt, ja kāds iegūst piekļuvi failam. Hešošana nodrošina, ka paroles nav tieši redzamas pat datu noplūdes gadījumā.
+
+3) Kas ir brute-force uzbrukums? Kā risk score + lockout palīdz to mazināt?
+Brute-force uzbrukums ir mēģinājums uzminēt paroli ar daudziem mēģinājumiem. Risk score nosaka, cik aizdomīgs ir mēģinājums, un lockout uz laiku bloķē lietotāju, ja risks ir pārāk liels.
+
+4) Kāpēc labāk salīdzināt hash vērtības ar hmac.compare_digest, nevis vienkāršu '=='?
+hmac.compare_digest salīdzina vērtības konstantā laikā. Tas samazina timing attack risku, kas var rasties, izmantojot parastu '=='.
+
+5) Nosauc 2 drošības labās prakses, ko reālā sistēmā vēl ieteiktu.
+Izmantot drošākus hešošanas algoritmus, piemēram, bcrypt vai argon2. Vēl viena laba prakse ir divu faktoru autentifikācija (2FA).
