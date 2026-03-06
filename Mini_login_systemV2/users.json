@@ -1,0 +1,12 @@
+{
+    "test1": {
+        "username": "test1",
+        "salt": "6f062321358e02d8ac2b8f12ddfb7ade",
+        "password_hash": "0c9c4bae1f02eb3f9209b904d694594dc195a81307ce57aa40d5cb4f9fb9bb60",
+        "created_at": "2026-03-06T17:17:04.670748",
+        "last_login": "2026-03-06T17:17:40.098584",
+        "failed_attempts": 0,
+        "last_fail_ts": null,
+        "locked_until": 0
+    }
+}
