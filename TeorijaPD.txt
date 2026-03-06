@@ -11,4 +11,5 @@ Brute-force uzbrukums ir mēģinājums uzminēt paroli ar daudziem mēģinājumi
 hmac.compare_digest salīdzina vērtības konstantā laikā. Tas samazina timing attack risku, kas var rasties, izmantojot parastu '=='.
 
 5) Nosauc 2 drošības labās prakses, ko reālā sistēmā vēl ieteiktu.
-Izmantot drošākus hešošanas algoritmus, piemēram, bcrypt vai argon2. Vēl viena laba prakse ir divu faktoru autentifikācija (2FA).
+Izmantot bcrypt vai argon2 paroļu hešošanai
+Ieviest 2FA
