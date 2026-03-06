@@ -1,5 +1,5 @@
 1) Kas ir “salt” un kāpēc tas ir vajadzīgs paroļu glabāšanā?
-Salt ir nejauša vērtība, ko pievieno parolei pirms hešošanas. Tas nodrošina, ka vienādas paroles rada dažādus hash rezultātus un palīdz aizsargāt pret rainbow table uzbrukumiem.
+Salt ir nejauša vērtība, ko pievieno parolei pirms hešošanas. Tas nodrošina, ka vienādas paroles rada dažādus hash rezultātus.
 
 2) Kāpēc nedrīkst glabāt paroles plaintext formā pat lokālā JSON failā?
 Ja paroles tiek glabātas plaintext formā, tās var viegli nolasīt, ja kāds iegūst piekļuvi failam. Hešošana nodrošina, ka paroles nav tieši redzamas pat datu noplūdes gadījumā.
